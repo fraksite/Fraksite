@@ -1,6 +1,6 @@
 # Fraksite — Website Development Studio
 
-Source code untuk website Fraksite: React + Tailwind CSS, bilingual (ID/EN), routing multi-halaman.
+Source code untuk website Fraksite: React + Tailwind CSS, bilingual (ID/EN), routing multi-halaman
 
 ## Struktur Proyek
 
