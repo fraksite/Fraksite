@@ -1,6 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
-import { ArrowUpRight, ArrowRight, Check, Sparkles, Star } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  Check,
+  Sparkles,
+} from "lucide-react";
 import Reveal from "../components/Reveal";
 import SectionHeader from "../components/SectionHeader";
 import { Button } from "../components/ui/button";
@@ -24,6 +30,41 @@ import {
 
 export default function Home() {
   const { t } = useApp();
+  const [mode, setMode] = useState("fraksite");
+
+  const comparison =
+    mode === "biasa"
+      ? {
+          badge: "❌ Standard Template",
+          badgeClass:
+            "border-orange-200 bg-orange-100 text-orange-700",
+          panelClass:
+            "border-slate-200 bg-slate-100/90 text-slate-700",
+          title: "Website Biasa",
+          itemClass: "text-slate-600",
+          accentClass: "text-orange-500",
+          items: [
+            { icon: "⏱️", label: "Speed", value: "Lambat (4.8s)" },
+            { icon: "📱", label: "Layout", value: "Kaku & Berantakan di HP" },
+            { icon: "📉", label: "Hasil", value: "Sepi Pembeli / Konversi Rendah" },
+          ],
+        }
+      : {
+          badge: "⚡ Custom High-Performance",
+          badgeClass:
+            "border-emerald-200 bg-emerald-100 text-emerald-700",
+          panelClass:
+            "border-blue-500/30 bg-white/95 text-slate-800 shadow-[0_20px_50px_rgba(59,130,246,0.18)]",
+          title: "Versi Fraksite",
+          itemClass: "text-slate-700",
+          accentClass: "text-emerald-500",
+          items: [
+            { icon: "⚡", label: "Speed", value: "Super Cepat (<0.8s)" },
+            { icon: "📱", label: "Layout", value: "100% Mobile First & Estetik" },
+            { icon: "🚀", label: "Hasil", value: "Siap Mengonversi Pengunjung Jadi Pembeli" },
+          ],
+        };
+
   return (
     <div>
       {/* HERO */}
@@ -39,7 +80,7 @@ export default function Home() {
         />
 
         <div className="relative mx-auto max-w-7xl px-5 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-8">
               <Reveal delay={80}>
                 <h1 className="font-display text-[42px] sm:text-6xl lg:text-[92px] leading-[0.94] font-semibold tracking-tighter mt-6">
@@ -60,7 +101,7 @@ export default function Home() {
                 <div className="mt-10 flex flex-wrap items-center gap-3">
                   <Link to="/mulai-proyek">
                     <Button className="rounded-full bg-primary hover:bg-primary/90 text-white h-12 px-6 text-sm font-medium group shadow-glow">
-                      {t("Mulai Proyek", "Start Project")}
+                      {t("Mulai Sekarang", "Start Now")}
                       <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </Button>
                   </Link>
@@ -77,41 +118,89 @@ export default function Home() {
               </Reveal>
             </div>
 
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4 lg:mt-1 lg:pt-2">
               <Reveal delay={200}>
-                <div className="relative rounded-2xl border border-border bg-secondary/40 backdrop-blur p-6">
-                  <div className="flex items-center gap-1 text-amber-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
-                    ))}
-                  </div>
-                  <p className="mt-4 font-display text-2xl leading-tight">
-                    {t(
-                      "\u201CWebsite launch tepat waktu, konversi naik 3x. Tim Fraksite paham bisnis kami.\u201D",
-                      "\u201CWebsite launched on time, conversions up 3x. Fraksite gets our business.\u201D",
-                    )}
-                  </p>
-                  <div className="mt-5 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary-light" />
-                    <div>
-                      <p className="text-sm font-medium">Rangga W.</p>
-                      <p className="text-xs text-muted-foreground">
-                        Founder, UrbanWear
-                      </p>
+                <div className="relative mt-0 lg:mt-0">
+                  <div
+                    className={`relative overflow-hidden rounded-[24px] border p-3 transition-all duration-300 ease-in-out ${
+                      mode === "fraksite"
+                        ? "border-blue-500/30 bg-white/90 shadow-[0_25px_60px_rgba(59,130,246,0.18)] backdrop-blur-md"
+                        : "border-slate-200 bg-slate-100/90 shadow-[0_20px_40px_rgba(15,23,42,0.08)]"
+                    }`}
+                  >
+                    <div className="mb-3 flex rounded-full border border-slate-200 bg-slate-100 p-1.5">
+                      <button
+                        type="button"
+                        onClick={() => setMode("biasa")}
+                        className={`flex-1 rounded-full px-3 py-2 text-[11px] font-medium transition-all duration-300 ease-in-out ${
+                          mode === "biasa"
+                            ? "bg-slate-900 text-white shadow-sm"
+                            : "text-slate-600 hover:text-slate-900"
+                        }`}
+                      >
+                        Website Biasa
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setMode("fraksite")}
+                        className={`flex-1 rounded-full px-3 py-2 text-[11px] font-medium transition-all duration-300 ease-in-out ${
+                          mode === "fraksite"
+                            ? "bg-blue-600 text-white shadow-sm"
+                            : "text-slate-600 hover:text-slate-900"
+                        }`}
+                      >
+                        Versi Fraksite
+                      </button>
+                    </div>
+
+                    <div
+                      className={`overflow-hidden rounded-[18px] border p-4 transition-all duration-300 ease-in-out ${comparison.panelClass}`}
+                    >
+                      <div
+                        className={`mb-3 inline-flex rounded-full border px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] ${comparison.badgeClass}`}
+                      >
+                        {comparison.badge}
+                      </div>
+
+                      <div className="space-y-3 transition-all duration-300 ease-in-out">
+                        <div className="flex items-start justify-between gap-3">
+                          <span className="text-lg">{comparison.title}</span>
+                          <span className="text-sm text-slate-400">
+                            {mode === "biasa" ? "❗" : "✓"}
+                          </span>
+                        </div>
+
+                        <div className="space-y-2">
+                          {comparison.items.map((item) => (
+                            <div
+                              key={item.label}
+                              className={`flex items-start gap-2 rounded-xl border border-current/10 bg-white/20 px-2.5 py-2 text-xs transition-all duration-300 ease-in-out ${comparison.itemClass}`}
+                            >
+                              <span className={comparison.accentClass}>{item.icon}</span>
+                              <div className="leading-snug">
+                                <div className="font-medium">
+                                  {item.label}: {item.value}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </Reveal>
+
               <Reveal delay={300}>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                   {[
-                    { n: "50+", l: t("Proyek", "Projects") },
-                    { n: "5★", l: t("Rating klien", "Client rating") },
-                    { n: "24j", l: t("Respons", "Response") },
+                    { n: "3x", l: "Lebih Cepat" },
+                    { n: "100%", l: "Responsive" },
+                    { n: "High", l: "Conversion" },
                   ].map((s) => (
                     <div
                       key={s.l}
-                      className="rounded-xl border border-border p-3"
+                      className="rounded-xl border border-border bg-white/50 p-3 shadow-sm backdrop-blur-sm"
                     >
                       <p className="font-display text-2xl font-semibold text-primary">
                         {s.n}
@@ -489,7 +578,7 @@ export default function Home() {
               <div className="flex md:justify-end">
                 <Link to="/mulai-proyek">
                   <Button className="rounded-full bg-primary hover:bg-primary/90 text-white h-12 px-7 font-medium shadow-glow-lg">
-                    {t("Mulai Proyek", "Start Project")}
+                    {t("Mulai Sekarang", "Start Now")}
                     <ArrowUpRight className="w-4 h-4 ml-1" />
                   </Button>
                 </Link>

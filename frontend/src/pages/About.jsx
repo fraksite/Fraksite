@@ -81,7 +81,7 @@ export default function About() {
           </h3>
           <Link to="/mulai-proyek">
             <Button className="rounded-full bg-primary hover:bg-primary/90 text-white h-12 px-6">
-              {t("Mulai Proyek", "Start Project")} <ArrowUpRight className="w-4 h-4 ml-1" />
+              {t("Mulai Sekarang", "Start Now")} <ArrowUpRight className="w-4 h-4 ml-1" />
             </Button>
           </Link>
         </div>

@@ -669,15 +669,4 @@ export const WHY = [
   },
 ];
 
-export const TECH = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "FastAPI",
-  "MongoDB",
-  "PostgreSQL",
-  "Tailwind",
-  "Figma",
-  "Vercel",
-  "AWS",
-];
+export const TECH = [];

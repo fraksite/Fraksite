@@ -72,7 +72,7 @@ ${form.story}`;
     <div className="pt-32 md:pt-40 pb-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
         <SectionHeader
-          eyebrow={t("Mulai Proyek", "Start Project")}
+          eyebrow={t("Mulai Sekarang", "Start Now")}
           title={t("Ceritakan idemu.", "Tell us your idea.")}
           accent={t("Kami balas cepat.", "We reply fast.")}
           description={t("Isi form di bawah — data akan kami kirim langsung ke WhatsApp untuk diskusi lanjut.", "Fill in the form below — we'll open a WhatsApp thread for follow-up.")}

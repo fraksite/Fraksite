@@ -100,7 +100,7 @@ export default function Navbar() {
           </button>
           <Link to="/mulai-proyek" className="hidden md:inline-flex">
             <Button className="rounded-full bg-primary hover:bg-primary/90 text-white font-medium px-5 h-10 shadow-glow group">
-              {t("Mulai Proyek", "Start Project")}
+              {t("Konsultasi Gratis", "Free Consultation")}
               <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Button>
           </Link>
@@ -141,7 +141,7 @@ export default function Navbar() {
               </button>
               <Link to="/mulai-proyek" className="flex-1">
                 <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-white">
-                  {t("Mulai Proyek", "Start Project")}
+                  {t("Konsultasi Gratis", "Free Consultation")}
                 </Button>
               </Link>
             </div>
