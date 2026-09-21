@@ -43,15 +43,9 @@ export default function Home() {
             <div className="lg:col-span-8">
               <Reveal delay={80}>
                 <h1 className="font-display text-[42px] sm:text-6xl lg:text-[92px] leading-[0.94] font-semibold tracking-tighter mt-6">
-                  {t("Website yang ", "Websites that ")}
-                  <span className="text-gradient-blue">
-                    {t("menjual,", "sell,")}
-                  </span>
+                  {t("Website profesional.", "Websites that ")}
                   <br />
-                  {t("bukan sekadar ", "not just ")}
-                  <span className="italic font-medium text-muted-foreground">
-                    {t("pajangan.", "showpieces.")}
-                  </span>
+                  {t("Bisnis makin kredibel. ", "not just ")}
                 </h1>
               </Reveal>
               <Reveal delay={160}>
