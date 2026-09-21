@@ -10,9 +10,9 @@ export const CONTACT = {
 export const NAV = [
   {
     key: "build",
-    href: "/yang-kami-buat",
-    id: "Yang Kami Buat",
-    en: "What We Build",
+    href: "/portofolio",
+    id: "Portofolio",
+    en: "Portofolio",
   },
   { key: "pricing", href: "/harga", id: "Harga", en: "Pricing" },
   { key: "process", href: "/cara-kerja", id: "Cara Kerja", en: "How We Work" },
