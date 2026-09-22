@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
-import { ArrowUpRight, ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check,} from "lucide-react";
 import Reveal from "../components/Reveal";
 import SectionHeader from "../components/SectionHeader";
 import { Button } from "../components/ui/button";
