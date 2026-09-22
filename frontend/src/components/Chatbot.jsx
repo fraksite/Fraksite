@@ -14,7 +14,7 @@ const FREE_MODELS = [
 const Chatbot = () => {
   // State Management
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedModel, setSelectedModel] = useState(FREE_MODELS[0].id);
+  const [selectedModel] = useState(FREE_MODELS[0].id);
   const [messages, setMessages] = useState([
     {
       sender: "bot",
