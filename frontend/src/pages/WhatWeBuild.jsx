@@ -14,9 +14,12 @@ export default function WhatWeBuild() {
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <SectionHeader
           eyebrow={t("Yang Kami Buat", "What We Build")}
-          title={t("Enam jenis website,", "Six website types,")}
-          accent={t("satu standar.", "one standard.")}
-          description={t("Setiap kategori kami rancang dari pengalaman menangani puluhan brand. Pilih yang paling dekat dengan kebutuhanmu.", "Every category is designed from hands-on work with dozens of brands. Pick the one closest to your needs.")}
+          title={t("Karya yang dirancang untuk", "Six website types,")}
+          accent={t("menghasilkan kepercayaan.", "one standard.")}
+          description={t(
+            "Setiap website dibuat dengan tujuan bisnis yang jelas, bukan sekadar terlihat menarik.",
+            "Every website is created with a clear business objective, rather than simply to look attractive.",
+          )}
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -42,14 +45,19 @@ export default function WhatWeBuild() {
                   <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {t(c.features.id, c.features.en).map((f, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" /> {f}
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{" "}
+                        {f}
                       </li>
                     ))}
                   </ul>
                   <div className="mt-8 flex flex-wrap items-center gap-3">
                     <Link to={`/hasil-kerja?cat=${c.slug}`}>
-                      <Button variant="outline" className="rounded-full border-border hover:bg-secondary">
-                        {t("Lihat contoh", "See examples")} <ArrowRight className="w-4 h-4 ml-1" />
+                      <Button
+                        variant="outline"
+                        className="rounded-full border-border hover:bg-secondary"
+                      >
+                        {t("Lihat contoh", "See examples")}{" "}
+                        <ArrowRight className="w-4 h-4 ml-1" />
                       </Button>
                     </Link>
                     <Link to="/mulai-proyek">
