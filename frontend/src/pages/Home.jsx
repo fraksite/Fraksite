@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden grain">
+      <section className="relative pt-24 md:pt-28 pb-12 md:pb-16 overflow-hidden grain">
         {/* Ambient blobs */}
         <div
           aria-hidden
@@ -236,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* PROBLEM */}
-      <section className="py-24 md:py-32">
+      <section className="py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <SectionHeader
             eyebrow={t("Masalah", "The problem")}
