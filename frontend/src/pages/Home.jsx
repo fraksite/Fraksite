@@ -90,12 +90,12 @@ export default function Home() {
                 <h1 className="font-display text-[42px] sm:text-6xl lg:text-[92px] leading-[0.94] font-semibold tracking-tighter mt-6">
                   {t(
                     <>
-                      website{" "}
-                      <span className="text-gradient-blue">profesional</span>
+                      Website{" "}
+                      <span className="text-gradient-blue">profesional.</span>
                     </>,
                     <>
                       <span className="text-gradient-blue">Professional</span>{" "}
-                      website
+                      website.
                     </>,
                   )}
                   <br />
@@ -354,59 +354,6 @@ export default function Home() {
                 </Reveal>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* HASIL KERJA — Featured */}
-      <section className="py-24 md:py-32 border-t border-border">
-        <div className="mx-auto max-w-7xl px-5 lg:px-10">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <SectionHeader
-              eyebrow={t("Hasil Kerja", "Our Work")}
-              title={t("Bukan pajangan,", "Not a showcase,")}
-              accent={t("tapi hasil nyata.", "but real outcomes.")}
-            />
-
-            <Link
-              to="/hasil-kerja"
-              className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
-            >
-              {t("Semua proyek", "All projects")}
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {PROJECTS.slice(0, 3).map((p, i) => (
-              <Reveal key={p.slug} delay={i * 80}>
-                <Link
-                  to={`/hasil-kerja/${p.slug}`}
-                  className="group block rounded-2xl overflow-hidden border border-border bg-secondary/30 card-hover"
-                >
-                  <div className="aspect-[4/3] overflow-hidden bg-secondary">
-                    <img
-                      src={p.image}
-                      alt={t(p.id.title, p.en.title)}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center justify-between text-xs text-muted-foreground uppercase tracking-widest">
-                      <span>{t(p.id.tag, p.en.tag)}</span>
-
-                      <span>{p.year}</span>
-                    </div>
-
-                    <h3 className="mt-3 font-display text-xl font-medium tracking-tight">
-                      {t(p.id.title, p.en.title)}
-                    </h3>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
