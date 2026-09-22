@@ -5,7 +5,6 @@ import {
   ArrowUpRight,
   ArrowRight,
   Check,
-  Sparkles,
 } from "lucide-react";
 import Reveal from "../components/Reveal";
 import SectionHeader from "../components/SectionHeader";
@@ -44,9 +43,21 @@ export default function Home() {
           itemClass: "text-slate-600",
           accentClass: "text-orange-500",
           items: [
-            { icon: "⏱️", label: "Speed", value: "Lambat (4.8s)" },
-            { icon: "📱", label: "Layout", value: "Kaku & Berantakan di HP" },
-            { icon: "📉", label: "Hasil", value: "Sepi Pembeli / Konversi Rendah" },
+            {
+              icon: "⏱️",
+              label: "Speed",
+              value: "Lambat (4.8s)",
+            },
+            {
+              icon: "📱",
+              label: "Layout",
+              value: "Kaku & Berantakan di HP",
+            },
+            {
+              icon: "📉",
+              label: "Hasil",
+              value: "Sepi Pembeli / Konversi Rendah",
+            },
           ],
         }
       : {
@@ -59,9 +70,21 @@ export default function Home() {
           itemClass: "text-slate-700",
           accentClass: "text-emerald-500",
           items: [
-            { icon: "⚡", label: "Speed", value: "Super Cepat (<0.8s)" },
-            { icon: "📱", label: "Layout", value: "100% Mobile First & Estetik" },
-            { icon: "🚀", label: "Hasil", value: "Siap Mengonversi Pengunjung Jadi Pembeli" },
+            {
+              icon: "⚡",
+              label: "Speed",
+              value: "Super Cepat (<0.8s)",
+            },
+            {
+              icon: "📱",
+              label: "Layout",
+              value: "100% Mobile First & Estetik",
+            },
+            {
+              icon: "🚀",
+              label: "Hasil",
+              value: "Siap Mengonversi Pengunjung Jadi Pembeli",
+            },
           ],
         };
 
@@ -95,6 +118,7 @@ export default function Home() {
                   </span>
                 </h1>
               </Reveal>
+
               <Reveal delay={160}>
                 <p className="mt-8 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                   {t(
@@ -103,6 +127,7 @@ export default function Home() {
                   )}
                 </p>
               </Reveal>
+
               <Reveal delay={240}>
                 <div className="mt-10 flex flex-wrap items-center gap-3">
                   <Link to="/mulai-proyek">
@@ -111,6 +136,7 @@ export default function Home() {
                       <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </Button>
                   </Link>
+
                   <Link to="/hasil-kerja">
                     <Button
                       variant="outline"
@@ -146,6 +172,7 @@ export default function Home() {
                       >
                         Website Biasa
                       </button>
+
                       <button
                         type="button"
                         onClick={() => setMode("fraksite")}
@@ -170,7 +197,10 @@ export default function Home() {
 
                       <div className="space-y-3 transition-all duration-300 ease-in-out">
                         <div className="flex items-start justify-between gap-3">
-                          <span className="text-lg">{comparison.title}</span>
+                          <span className="text-lg">
+                            {comparison.title}
+                          </span>
+
                           <span className="text-sm text-slate-400">
                             {mode === "biasa" ? "❗" : "✓"}
                           </span>
@@ -182,7 +212,10 @@ export default function Home() {
                               key={item.label}
                               className={`flex items-start gap-2 rounded-xl border border-current/10 bg-white/20 px-2.5 py-2 text-xs transition-all duration-300 ease-in-out ${comparison.itemClass}`}
                             >
-                              <span className={comparison.accentClass}>{item.icon}</span>
+                              <span className={comparison.accentClass}>
+                                {item.icon}
+                              </span>
+
                               <div className="leading-snug">
                                 <div className="font-medium">
                                   {item.label}: {item.value}
@@ -211,6 +244,7 @@ export default function Home() {
                       <p className="font-display text-2xl font-semibold text-primary">
                         {s.n}
                       </p>
+
                       <p className="text-[11px] uppercase tracking-widest text-muted-foreground mt-1">
                         {s.l}
                       </p>
@@ -225,7 +259,10 @@ export default function Home() {
           <div className="mt-20 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div className="flex animate-marquee whitespace-nowrap gap-12 text-sm text-muted-foreground">
               {[...TECH, ...TECH].map((tech, i) => (
-                <span key={i} className="inline-flex items-center gap-2">
+                <span
+                  key={i}
+                  className="inline-flex items-center gap-2"
+                >
                   <span className="w-1 h-1 rounded-full bg-primary" />
                   {tech}
                 </span>
@@ -240,13 +277,17 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 lg:px-10">
           <SectionHeader
             eyebrow={t("Masalah", "The problem")}
-            title={t("Kalau ini terasa familiar,", "If this feels familiar,")}
+            title={t(
+              "Kalau ini terasa familiar,",
+              "If this feels familiar,",
+            )}
             accent={t("kami paham.", "we get it.")}
             description={t(
               "Banyak bisnis kehilangan pelanggan bukan karena produknya kurang, tapi karena kehadiran online-nya belum meyakinkan.",
               "Many businesses lose customers not because of their product, but because their online presence isn't convincing.",
             )}
           />
+
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4">
             {PROBLEMS.map((p, i) => (
               <Reveal key={i} delay={i * 60}>
@@ -254,6 +295,7 @@ export default function Home() {
                   <span className="font-display text-3xl text-primary">
                     0{i + 1}
                   </span>
+
                   <p className="text-lg md:text-xl leading-snug">
                     {t(p.id, p.en)}
                   </p>
@@ -277,47 +319,60 @@ export default function Home() {
                 "Pick your business need — we already have a framework for each category.",
               )}
             />
+
             <Link
               to="/yang-kami-buat"
               className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
             >
-              {t("Lihat semua", "See all")} <ArrowUpRight className="w-4 h-4" />
+              {t("Lihat semua", "See all")}
+              <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-5 auto-rows-[minmax(200px,auto)]">
             {CATEGORIES.map((c, i) => {
               const Icon = Icons[c.icon] || Icons.Circle;
+
               const span =
                 i === 0
                   ? "md:col-span-4"
                   : i === 5
                     ? "md:col-span-4 md:row-span-1"
                     : "md:col-span-2";
+
               return (
-                <Reveal key={c.slug} delay={i * 60} className={span}>
+                <Reveal
+                  key={c.slug}
+                  delay={i * 60}
+                  className={span}
+                >
                   <Link
                     to={`/hasil-kerja?cat=${c.slug}`}
                     className="group relative block h-full rounded-2xl border border-border p-6 md:p-8 overflow-hidden card-hover bg-secondary/30 hover:border-primary/50"
                   >
                     <div className="absolute -bottom-16 -right-16 w-64 h-64 rounded-full bg-primary/0 group-hover:bg-primary/10 blur-3xl transition-colors duration-500" />
+
                     <div className="relative flex flex-col h-full">
                       <div className="flex items-center justify-between">
                         <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-background border border-border text-primary group-hover:border-primary/50">
                           <Icon className="w-5 h-5" />
                         </span>
+
                         <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
                           {t(c.id.tag, c.en.tag)}
                         </span>
                       </div>
+
                       <h3 className="font-display text-2xl md:text-3xl font-medium mt-6 tracking-tight">
                         {t(c.id.name, c.en.name)}
                       </h3>
+
                       <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-md">
                         {t(c.desc.id, c.desc.en)}
                       </p>
+
                       <span className="mt-auto pt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground/80 group-hover:text-primary transition-colors">
-                        {t("Pelajari", "Learn more")}{" "}
+                        {t("Pelajari", "Learn more")}
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </span>
                     </div>
@@ -338,14 +393,16 @@ export default function Home() {
               title={t("Bukan pajangan,", "Not a showcase,")}
               accent={t("tapi hasil nyata.", "but real outcomes.")}
             />
+
             <Link
               to="/hasil-kerja"
               className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
             >
-              {t("Semua proyek", "All projects")}{" "}
+              {t("Semua proyek", "All projects")}
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
+
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {PROJECTS.slice(0, 3).map((p, i) => (
               <Reveal key={p.slug} delay={i * 80}>
@@ -361,11 +418,16 @@ export default function Home() {
                       loading="lazy"
                     />
                   </div>
+
                   <div className="p-6">
                     <div className="flex items-center justify-between text-xs text-muted-foreground uppercase tracking-widest">
-                      <span>{t(p.id.tag, p.en.tag)}</span>
+                      <span>
+                        {t(p.id.tag, p.en.tag)}
+                      </span>
+
                       <span>{p.year}</span>
                     </div>
+
                     <h3 className="mt-3 font-display text-xl font-medium tracking-tight">
                       {t(p.id.title, p.en.title)}
                     </h3>
@@ -385,16 +447,20 @@ export default function Home() {
             title={t("Kerja rapi,", "Neat work,")}
             accent={t("hasil serius.", "serious results.")}
           />
+
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {WHY.map((w, i) => {
               const Icon = Icons[w.icon] || Icons.Circle;
+
               return (
                 <Reveal key={w.icon} delay={i * 60}>
                   <div className="h-full rounded-2xl border border-border p-6 hover:border-primary/40 transition-colors">
                     <Icon className="w-6 h-6 text-primary" />
+
                     <h3 className="mt-6 font-display text-xl font-medium">
                       {t(w.id.t, w.en.t)}
                     </h3>
+
                     <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                       {t(w.id.d, w.en.d)}
                     </p>
@@ -418,6 +484,7 @@ export default function Home() {
               "Transparent workflow so you always know your project's progress.",
             )}
           />
+
           <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
             {PROCESS.slice(0, 4).map((s, i) => (
               <Reveal key={s.n} delay={i * 60}>
@@ -425,9 +492,11 @@ export default function Home() {
                   <span className="font-display text-4xl font-semibold text-primary">
                     {s.n}
                   </span>
+
                   <h3 className="mt-4 font-display text-lg font-medium">
                     {t(s.id.t, s.en.t)}
                   </h3>
+
                   <p className="mt-1 text-sm text-muted-foreground">
                     {t(s.id.d, s.en.d)}
                   </p>
@@ -435,12 +504,13 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+
           <div className="mt-8 text-center">
             <Link
               to="/cara-kerja"
               className="inline-flex items-center gap-2 text-sm font-medium hover:text-primary"
             >
-              {t("Lihat semua 8 tahapan", "See all 8 steps")}{" "}
+              {t("Lihat semua 8 tahapan", "See all 8 steps")}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -455,6 +525,7 @@ export default function Home() {
             title={t("Transparan.", "Transparent.")}
             accent={t("Tanpa surprise.", "No surprises.")}
           />
+
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
             {PRICING.filter((p) =>
               ["starter", "business", "ecommerce"].includes(p.slug),
@@ -472,31 +543,41 @@ export default function Home() {
                     {t("Paling Populer", "Most Popular")}
                   </span>
                 )}
+
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">
                   {t(p.id.tag, p.en.tag)}
                 </p>
+
                 <h3 className="mt-2 font-display text-3xl font-medium">
                   {t(p.id.name, p.en.name)}
                 </h3>
+
                 <p className="mt-6 font-display text-5xl font-semibold tracking-tighter">
                   <span className="text-lg align-top text-muted-foreground mr-1">
                     Rp
                   </span>
+
                   {p.price}
+
                   <span className="text-base font-normal text-muted-foreground ml-1">
                     {t(p.unit, p.unitEn)}
                   </span>
                 </p>
+
                 <ul className="mt-6 space-y-2.5">
                   {t(p.features.id, p.features.en)
                     .slice(0, 5)
                     .map((f, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{" "}
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-sm"
+                      >
+                        <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                         {f}
                       </li>
                     ))}
                 </ul>
+
                 <Link to="/mulai-proyek">
                   <Button
                     className={`mt-8 w-full rounded-full ${
@@ -511,12 +592,13 @@ export default function Home() {
               </div>
             ))}
           </div>
+
           <div className="mt-8 text-center">
             <Link
               to="/harga"
               className="inline-flex items-center gap-2 text-sm font-medium hover:text-primary"
             >
-              {t("Lihat semua paket", "See all packages")}{" "}
+              {t("Lihat semua paket", "See all packages")}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -537,8 +619,13 @@ export default function Home() {
               )}
             />
           </div>
+
           <div className="lg:col-span-7">
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full"
+            >
               {FAQ_GROUPS.slice(0, 2)
                 .flatMap((g) => g.items)
                 .map((item, i) => (
@@ -550,6 +637,7 @@ export default function Home() {
                     <AccordionTrigger className="text-left font-display text-lg font-medium hover:no-underline hover:text-primary">
                       {t(item.q.id, item.q.en)}
                     </AccordionTrigger>
+
                     <AccordionContent className="text-muted-foreground text-base leading-relaxed">
                       {t(item.a.id, item.a.en)}
                     </AccordionContent>
@@ -568,19 +656,23 @@ export default function Home() {
               aria-hidden
               className="absolute -top-24 -right-24 w-[400px] h-[400px] rounded-full bg-primary/25 blur-[120px]"
             />
+
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">
                   {t("Siap mulai proyekmu?", "Ready to start?")}
                 </p>
+
                 <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tighter mt-4">
                   {t("Ceritakan idemu.", "Tell us your idea.")}
                   <br />
+
                   <span className="text-gradient-blue">
                     {t("Kami eksekusi.", "We'll execute.")}
                   </span>
                 </h2>
               </div>
+
               <div className="flex md:justify-end">
                 <Link to="/mulai-proyek">
                   <Button className="rounded-full bg-primary hover:bg-primary/90 text-white h-12 px-7 font-medium shadow-glow-lg">
