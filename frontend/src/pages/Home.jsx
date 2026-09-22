@@ -37,31 +37,91 @@ export default function Home() {
       ? {
           badge: "❌ Standard Template",
           badgeClass:
-            "border-orange-200 bg-orange-100 text-orange-700",
+            "border-orange-500/20 bg-orange-500/10 text-orange-300",
           panelClass:
-            "border-slate-200 bg-slate-100/90 text-slate-700",
+            "border border-slate-200/80 bg-slate-50/80 dark:bg-slate-800/60 dark:border-slate-700/60 rounded-xl p-5 shadow-sm",
           title: "Website Biasa",
-          itemClass: "text-slate-600",
-          accentClass: "text-orange-500",
+          itemClass: "text-slate-700 dark:text-slate-200",
+          accentClass: "text-orange-500 dark:text-orange-400",
           items: [
-            { icon: "⏱️", label: "Speed", value: "Lambat (4.8s)" },
-            { icon: "📱", label: "Layout", value: "Kaku & Berantakan di HP" },
-            { icon: "📉", label: "Hasil", value: "Sepi Pembeli / Konversi Rendah" },
+            {
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-orange-500 dark:text-orange-400 shrink-0">
+                  <path d="M3 12h2l2.5 7 3.5-14 2.5 7H21" />
+                  <path d="M4 4h16" />
+                  <path d="M4 20h16" />
+                </svg>
+              ),
+              label: "Speed",
+              value: "Lambat (4.8s)",
+            },
+            {
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0">
+                  <rect width="7" height="7" x="3" y="3" rx="1" />
+                  <rect width="7" height="7" x="3" y="14" rx="1" />
+                  <path d="M14 4h7" /><path d="M14 9h7" /><path d="M14 15h7" /><path d="M14 20h7" />
+                </svg>
+              ),
+              label: "Layout",
+              value: "Kaku & Berantakan di HP",
+            },
+            {
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-red-500 dark:text-red-400 shrink-0">
+                  <path d="M12 9v4" />
+                  <path d="M12 17h.01" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              ),
+              label: "Hasil",
+              value: "Sepi Pembeli / Konversi Rendah",
+            },
           ],
         }
       : {
           badge: "⚡ Custom High-Performance",
           badgeClass:
-            "border-emerald-200 bg-emerald-100 text-emerald-700",
+            "border-emerald-500/20 bg-emerald-500/10 text-emerald-400",
           panelClass:
-            "border-blue-500/30 bg-white/95 text-slate-800 shadow-[0_20px_50px_rgba(59,130,246,0.18)]",
+            "border border-slate-200/80 bg-slate-50/80 dark:bg-slate-800/60 dark:border-slate-700/60 rounded-xl p-5 shadow-sm",
           title: "Versi Fraksite",
-          itemClass: "text-slate-700",
-          accentClass: "text-emerald-500",
+          itemClass: "text-slate-700 dark:text-slate-200",
+          accentClass: "text-emerald-600 dark:text-emerald-400",
           items: [
-            { icon: "⚡", label: "Speed", value: "Super Cepat (<0.8s)" },
-            { icon: "📱", label: "Layout", value: "100% Mobile First & Estetik" },
-            { icon: "🚀", label: "Hasil", value: "Siap Mengonversi Pengunjung Jadi Pembeli" },
+            {
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0">
+                  <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09" />
+                  <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z" />
+                  <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" />
+                </svg>
+              ),
+              label: "Speed",
+              value: "Super Cepat (<0.8s)",
+            },
+            {
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0">
+                  <rect width="7" height="7" x="3" y="3" rx="1" />
+                  <rect width="7" height="7" x="3" y="14" rx="1" />
+                  <path d="M14 4h7" /><path d="M14 9h7" /><path d="M14 15h7" /><path d="M14 20h7" />
+                </svg>
+              ),
+              label: "Layout",
+              value: "100% Mobile First & Estetik",
+            },
+            {
+              icon: (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-violet-600 dark:text-violet-400 shrink-0">
+                  <path d="M16 7h6v6" />
+                  <path d="m22 7-8.5 8.5-5-5L2 17" />
+                </svg>
+              ),
+              label: "Hasil",
+              value: "Siap Mengonversi Pengunjung Jadi Pembeli",
+            },
           ],
         };
 
@@ -128,20 +188,20 @@ export default function Home() {
               <Reveal delay={200}>
                 <div className="relative mt-0 lg:mt-0">
                   <div
-                    className={`relative overflow-hidden rounded-[24px] border p-3 transition-all duration-300 ease-in-out ${
+                    className={`relative overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-xl shadow-slate-200/50 backdrop-blur-xl transition-all duration-300 ease-in-out dark:bg-slate-900/80 dark:border-slate-800 dark:shadow-2xl dark:shadow-blue-500/10 ${
                       mode === "fraksite"
-                        ? "border-blue-500/30 bg-white/90 shadow-[0_25px_60px_rgba(59,130,246,0.18)] backdrop-blur-md"
-                        : "border-slate-200 bg-slate-100/90 shadow-[0_20px_40px_rgba(15,23,42,0.08)]"
+                        ? "border-slate-200/80"
+                        : "border-slate-200/80"
                     }`}
                   >
-                    <div className="mb-3 flex rounded-full border border-slate-200 bg-slate-100 p-1.5">
+                    <div className="mb-3 rounded-xl border border-slate-200/80 bg-slate-100 p-1.5 dark:bg-slate-800/80 dark:border-slate-700/50">
                       <button
                         type="button"
                         onClick={() => setMode("biasa")}
-                        className={`flex-1 rounded-full px-3 py-2 text-[11px] font-medium transition-all duration-300 ease-in-out ${
+                        className={`flex-1 rounded-lg px-3 py-2 text-[11px] font-medium transition-all duration-300 ease-in-out ${
                           mode === "biasa"
-                            ? "bg-slate-900 text-white shadow-sm"
-                            : "text-slate-600 hover:text-slate-900"
+                            ? "bg-blue-600 text-white shadow-md"
+                            : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
                         }`}
                       >
                         Website Biasa
@@ -149,10 +209,10 @@ export default function Home() {
                       <button
                         type="button"
                         onClick={() => setMode("fraksite")}
-                        className={`flex-1 rounded-full px-3 py-2 text-[11px] font-medium transition-all duration-300 ease-in-out ${
+                        className={`flex-1 rounded-lg px-3 py-2 text-[11px] font-medium transition-all duration-300 ease-in-out ${
                           mode === "fraksite"
-                            ? "bg-blue-600 text-white shadow-sm"
-                            : "text-slate-600 hover:text-slate-900"
+                            ? "bg-blue-600 text-white shadow-md"
+                            : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
                         }`}
                       >
                         Versi Fraksite
@@ -160,17 +220,13 @@ export default function Home() {
                     </div>
 
                     <div
-                      className={`overflow-hidden rounded-[18px] border p-4 transition-all duration-300 ease-in-out ${comparison.panelClass}`}
+                      className={`overflow-hidden rounded-[18px] transition-all duration-300 ease-in-out ${comparison.panelClass}`}
                     >
-                      <div
-                        className={`mb-3 inline-flex rounded-full border px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] ${comparison.badgeClass}`}
-                      >
-                        {comparison.badge}
-                      </div>
-
                       <div className="space-y-3 transition-all duration-300 ease-in-out">
                         <div className="flex items-start justify-between gap-3">
-                          <span className="text-lg">{comparison.title}</span>
+                          <span className="text-slate-900 dark:text-white font-bold text-lg">
+                            {comparison.title}
+                          </span>
                           <span className="text-sm text-slate-400">
                             {mode === "biasa" ? "❗" : "✓"}
                           </span>
@@ -180,11 +236,13 @@ export default function Home() {
                           {comparison.items.map((item) => (
                             <div
                               key={item.label}
-                              className={`flex items-start gap-2 rounded-xl border border-current/10 bg-white/20 px-2.5 py-2 text-xs transition-all duration-300 ease-in-out ${comparison.itemClass}`}
+                              className={`flex items-center gap-3 rounded-xl border bg-white border-slate-200/80 text-slate-700 px-3 py-2.5 text-xs shadow-sm transition-all duration-300 ease-in-out hover:bg-slate-50 dark:bg-slate-900/60 dark:border-slate-700/80 dark:text-slate-200 ${comparison.itemClass}`}
                             >
-                              <span className={comparison.accentClass}>{item.icon}</span>
+                              <span className={`flex shrink-0 ${comparison.accentClass}`}>
+                                {item.icon}
+                              </span>
                               <div className="leading-snug">
-                                <div className="font-medium">
+                                <div className="text-slate-800 dark:text-slate-100 font-medium">
                                   {item.label}: {item.value}
                                 </div>
                               </div>
@@ -200,18 +258,18 @@ export default function Home() {
               <Reveal delay={300}>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                   {[
-                    { n: "3x", l: "Lebih Cepat" },
-                    { n: "100%", l: "Responsive" },
-                    { n: "High", l: "Conversion" },
+                    { n: "3x", l: "LEBIH CEPAT" },
+                    { n: "100%", l: "RESPONSIVE" },
+                    { n: "High", l: "CONVERSION" },
                   ].map((s) => (
                     <div
                       key={s.l}
-                      className="rounded-xl border border-border bg-white/50 p-3 shadow-sm backdrop-blur-sm"
+                      className="rounded-xl border border-slate-200/80 bg-slate-100/80 p-3 shadow-sm dark:bg-slate-900/70 dark:border-slate-800/80"
                     >
-                      <p className="font-display text-2xl font-semibold text-primary">
+                      <p className="font-display text-2xl font-extrabold text-blue-600 dark:text-blue-400">
                         {s.n}
                       </p>
-                      <p className="text-[11px] uppercase tracking-widest text-muted-foreground mt-1">
+                      <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
                         {s.l}
                       </p>
                     </div>
