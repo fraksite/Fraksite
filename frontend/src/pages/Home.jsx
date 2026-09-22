@@ -43,9 +43,15 @@ export default function Home() {
             <div className="lg:col-span-8">
               <Reveal delay={80}>
                 <h1 className="font-display text-[42px] sm:text-6xl lg:text-[92px] leading-[0.94] font-semibold tracking-tighter mt-6">
-                  {t("Website profesional.", "Professional website.")}
-                  <br />
-                  {t("Bisnis makin kredibel. ", "Boost business credibility.")}
+                  {t("Website ", " website.")}
+                  <span className="text-gradient-blue">
+                    {t("profesional.", "Professional")}
+                  </span>
+                  <br></br>
+                  {t("Bisnis makin ", "Boost bussiness ")}
+                  <span className="text-gradient-blue">
+                    {t("kredibel.", "credibility.")}
+                  </span>
                 </h1>
               </Reveal>
               <Reveal delay={160}>

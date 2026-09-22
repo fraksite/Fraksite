@@ -7,7 +7,7 @@ import { AppProvider, useApp } from "./contexts/AppContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import WhatWeBuild from "./pages/WhatWeBuild";
+import Portofolio from "./pages/Portofolio";
 import Pricing from "./pages/Pricing";
 import HowWeWork from "./pages/HowWeWork";
 import About from "./pages/About";
@@ -37,7 +37,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/yang-kami-buat" element={<WhatWeBuild />} />
+              <Route path="/portofolio" element={<Portofolio />} />
               <Route path="/harga" element={<Pricing />} />
               <Route path="/cara-kerja" element={<HowWeWork />} />
               <Route path="/tentang" element={<About />} />
