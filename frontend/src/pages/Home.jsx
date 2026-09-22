@@ -51,8 +51,8 @@ export default function Home() {
               <Reveal delay={160}>
                 <p className="mt-8 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                   {t(
-                    "Kami bantu bisnis Indonesia hadir online dengan website custom yang cepat, elegan, dan siap konversi — dari company profile sampai web app khusus.",
-                    "We help Indonesian businesses go online with fast, elegant, conversion-ready websites — from company profiles to custom web apps.",
+                    "Bantu bisnis kamu berkembang lebih pesat lewat website yang cepat, rapi, dan siap ningkatin penjualan. Mulai dari company profile sampai web app, kami siap wujudkan sesuai kebutuhan bisnismu.",
+                    "Help your business grow faster with a custom website that’s fast, polished, and designed to boost sales. From company profiles to web apps, we’re ready to bring your vision to life based on your business needs.",
                   )}
                 </p>
               </Reveal>
