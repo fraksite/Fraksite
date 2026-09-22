@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { Instagram, Mail, MessageCircle, MapPin, ArrowUpRight } from "lucide-react";
+import {
+  Instagram,
+  Mail,
+  MessageCircle,
+  MapPin,
+  ArrowUpRight,
+} from "lucide-react";
 import { NAV, CONTACT, CATEGORIES } from "../data/content";
 import { useApp } from "../contexts/AppContext";
 
@@ -14,9 +20,10 @@ export default function Footer() {
               {t("Siap mulai?", "Ready to start?")}
             </p>
             <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-tighter">
-              {t("Bangun website", "Build a website")}
-              <br />
-              <span className="text-gradient-blue">{t("yang menjual.", "that sells.")}</span>
+              {t(
+                "Bangun kehadiran digital Anda",
+                "Build your digital presence",
+              )}
             </h2>
             <Link
               to="/mulai-proyek"
@@ -105,7 +112,8 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Fraksite. {t("Semua hak dilindungi.", "All rights reserved.")}
+            © {new Date().getFullYear()} Fraksite.{" "}
+            {t("Semua hak dilindungi.", "All rights reserved.")}
           </p>
           <p className="text-xs text-muted-foreground">
             {t("Dibuat dengan ", "Crafted with ")}

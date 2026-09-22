@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.1",
@@ -13,6 +14,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
+    "react-scripts": "5.0.1",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2"
   },
@@ -20,7 +22,6 @@
     "@craco/craco": "^7.1.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
-    "react-scripts": "5.0.1",
     "tailwindcss": "^3.4.10",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -30,10 +31,20 @@
     "test": "craco test"
   },
   "eslintConfig": {
-    "extends": ["react-app"]
+    "extends": [
+      "react-app"
+    ]
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
-    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

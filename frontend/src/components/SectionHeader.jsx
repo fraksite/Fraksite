@@ -1,13 +1,21 @@
 import Reveal from "./Reveal";
 
-export default function SectionHeader({ eyebrow, title, description, align = "left", accent }) {
-  const alignCls = align === "center" ? "text-center items-center" : "text-left items-start";
+export default function SectionHeader({
+  eyebrow,
+  title,
+  description,
+  align = "left",
+  accent,
+}) {
+  const alignCls =
+    align === "center" ? "text-center items-center" : "text-left items-start";
   return (
-    <div className={`flex flex-col ${alignCls} gap-4 max-w-3xl ${align === "center" ? "mx-auto" : ""}`}>
+    <div
+      className={`flex flex-col ${alignCls} gap-4 max-w-3xl ${align === "center" ? "mx-auto" : ""}`}
+    >
       {eyebrow && (
         <Reveal>
           <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-muted-foreground">
-            <span className="inline-block w-6 h-px bg-primary" />
             {eyebrow}
           </span>
         </Reveal>

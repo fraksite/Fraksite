@@ -8,7 +8,13 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 import { toast } from "sonner";
 
 export default function StartProject() {
@@ -25,12 +31,18 @@ export default function StartProject() {
     story: "",
   });
 
-  const set = (k) => (e) => setForm((s) => ({ ...s, [k]: e.target?.value ?? e }));
+  const set = (k) => (e) =>
+    setForm((s) => ({ ...s, [k]: e.target?.value ?? e }));
 
   const submit = (e) => {
     e.preventDefault();
     if (!form.name || !form.whatsapp || !form.story) {
-      toast.error(t("Mohon lengkapi Nama, WhatsApp, dan Ceritakan kebutuhan.", "Please fill in Name, WhatsApp, and Your Story."));
+      toast.error(
+        t(
+          "Mohon lengkapi Nama, WhatsApp, dan Ceritakan kebutuhan.",
+          "Please fill in Name, WhatsApp, and Your Story.",
+        ),
+      );
       return;
     }
     const L = lang === "id";
@@ -50,7 +62,12 @@ export default function StartProject() {
 ${form.story}`;
     const url = `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
-    toast.success(t("Membuka WhatsApp… kirim pesannya ya!", "Opening WhatsApp… please send the message!"));
+    toast.success(
+      t(
+        "Membuka WhatsApp… kirim pesannya ya!",
+        "Opening WhatsApp… please send the message!",
+      ),
+    );
   };
 
   const budgets = [
@@ -72,71 +89,152 @@ ${form.story}`;
     <div className="pt-32 md:pt-40 pb-24">
       <div className="mx-auto max-w-6xl px-5 lg:px-10">
         <SectionHeader
-          eyebrow={t("Mulai Proyek", "Start Project")}
+          eyebrow={t("Mulai Sekarang", "Start Now")}
           title={t("Ceritakan idemu.", "Tell us your idea.")}
           accent={t("Kami balas cepat.", "We reply fast.")}
-          description={t("Isi form di bawah — data akan kami kirim langsung ke WhatsApp untuk diskusi lanjut.", "Fill in the form below — we'll open a WhatsApp thread for follow-up.")}
+          description={t(
+            "Isi form di bawah — data akan kami kirim langsung ke WhatsApp untuk diskusi lanjut.",
+            "Fill in the form below — we'll open a WhatsApp thread for follow-up.",
+          )}
         />
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <Reveal>
-              <form onSubmit={submit} className="rounded-2xl border border-border p-6 md:p-10 bg-secondary/20 space-y-6">
+              <form
+                onSubmit={submit}
+                className="rounded-2xl border border-border p-6 md:p-10 bg-secondary/20 space-y-6"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <Field label={t("Nama Lengkap *", "Full Name *")}>
-                    <Input value={form.name} onChange={set("name")} placeholder={t("Rangga Wijaya", "Rangga Wijaya")} required />
+                    <Input
+                      value={form.name}
+                      onChange={set("name")}
+                      placeholder={t("Rangga Wijaya", "Rangga Wijaya")}
+                      required
+                    />
                   </Field>
                   <Field label={t("Nama Bisnis", "Business Name")}>
-                    <Input value={form.business} onChange={set("business")} placeholder="UrbanWear ID" />
+                    <Input
+                      value={form.business}
+                      onChange={set("business")}
+                      placeholder="UrbanWear ID"
+                    />
                   </Field>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <Field label={t("Jenis Website yang Dibutuhkan", "Website Type Needed")}>
+                  <Field
+                    label={t(
+                      "Jenis Website yang Dibutuhkan",
+                      "Website Type Needed",
+                    )}
+                  >
                     <Select value={form.type} onValueChange={set("type")}>
-                      <SelectTrigger><SelectValue placeholder={t("Pilih kategori", "Choose category")} /></SelectTrigger>
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={t("Pilih kategori", "Choose category")}
+                        />
+                      </SelectTrigger>
                       <SelectContent>
                         {CATEGORIES.map((c) => (
-                          <SelectItem key={c.slug} value={t(c.id.name, c.en.name)}>{t(c.id.name, c.en.name)}</SelectItem>
+                          <SelectItem
+                            key={c.slug}
+                            value={t(c.id.name, c.en.name)}
+                          >
+                            {t(c.id.name, c.en.name)}
+                          </SelectItem>
                         ))}
-                        <SelectItem value={t("Belum yakin", "Not sure yet")}>{t("Belum yakin", "Not sure yet")}</SelectItem>
+                        <SelectItem value={t("Belum yakin", "Not sure yet")}>
+                          {t("Belum yakin", "Not sure yet")}
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </Field>
                   <Field label={t("Budget", "Budget")}>
                     <Select value={form.budget} onValueChange={set("budget")}>
-                      <SelectTrigger><SelectValue placeholder={t("Pilih range", "Choose range")} /></SelectTrigger>
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={t("Pilih range", "Choose range")}
+                        />
+                      </SelectTrigger>
                       <SelectContent>
-                        {budgets.map((b) => <SelectItem key={b.v} value={b.l}>{b.l}</SelectItem>)}
+                        {budgets.map((b) => (
+                          <SelectItem key={b.v} value={b.l}>
+                            {b.l}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </Field>
                 </div>
 
                 <Field label={t("Fitur yang Dibutuhkan", "Required Features")}>
-                  <Input value={form.features} onChange={set("features")} placeholder={t("Contoh: katalog, keranjang, payment gateway", "e.g. catalog, cart, payment gateway")} />
+                  <Input
+                    value={form.features}
+                    onChange={set("features")}
+                    placeholder={t(
+                      "Contoh: katalog, keranjang, payment gateway",
+                      "e.g. catalog, cart, payment gateway",
+                    )}
+                  />
                 </Field>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <Field label={t("Target Launch", "Target Launch")}>
                     <Select value={form.launch} onValueChange={set("launch")}>
-                      <SelectTrigger><SelectValue placeholder={t("Kapan mau launch?", "When to launch?")} /></SelectTrigger>
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={t(
+                            "Kapan mau launch?",
+                            "When to launch?",
+                          )}
+                        />
+                      </SelectTrigger>
                       <SelectContent>
-                        {launches.map((b) => <SelectItem key={b.v} value={b.l}>{b.l}</SelectItem>)}
+                        {launches.map((b) => (
+                          <SelectItem key={b.v} value={b.l}>
+                            {b.l}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </Field>
                   <Field label={t("WhatsApp *", "WhatsApp *")}>
-                    <Input value={form.whatsapp} onChange={set("whatsapp")} placeholder="0812xxxxxxx" required />
+                    <Input
+                      value={form.whatsapp}
+                      onChange={set("whatsapp")}
+                      placeholder="0812xxxxxxx"
+                      required
+                    />
                   </Field>
                 </div>
 
                 <Field label={t("Email", "Email")}>
-                  <Input type="email" value={form.email} onChange={set("email")} placeholder="you@business.com" />
+                  <Input
+                    type="email"
+                    value={form.email}
+                    onChange={set("email")}
+                    placeholder="you@business.com"
+                  />
                 </Field>
 
-                <Field label={t("Ceritakan kebutuhan kamu *", "Tell us your needs *")}>
-                  <Textarea rows={5} value={form.story} onChange={set("story")} placeholder={t("Bisnis kamu tentang apa, siapa targetnya, dan apa harapan dari websitenya?", "What is your business, who is your target, and what do you expect from the site?")} required />
+                <Field
+                  label={t(
+                    "Ceritakan kebutuhan kamu *",
+                    "Tell us your needs *",
+                  )}
+                >
+                  <Textarea
+                    rows={5}
+                    value={form.story}
+                    onChange={set("story")}
+                    placeholder={t(
+                      "Bisnis kamu tentang apa, siapa targetnya, dan apa harapan dari websitenya?",
+                      "What is your business, who is your target, and what do you expect from the site?",
+                    )}
+                    required
+                  />
                 </Field>
 
                 <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -148,7 +246,10 @@ ${form.story}`;
                     <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Button>
                   <p className="text-xs text-muted-foreground">
-                    {t("Data hanya dipakai untuk membalas permintaanmu.", "Data used only to reply to your request.")}
+                    {t(
+                      "Data hanya dipakai untuk membalas permintaanmu.",
+                      "Data used only to reply to your request.",
+                    )}
                   </p>
                 </div>
               </form>
@@ -158,7 +259,9 @@ ${form.story}`;
           <div className="space-y-5">
             <Reveal delay={100}>
               <div className="rounded-2xl border border-border p-6">
-                <h3 className="font-display text-lg font-medium">{t("Kontak Langsung", "Direct Contact")}</h3>
+                <h3 className="font-display text-lg font-medium">
+                  {t("Kontak Langsung", "Direct Contact")}
+                </h3>
                 <div className="mt-4 space-y-3">
                   <a
                     href={`https://wa.me/${CONTACT.whatsapp}`}
@@ -168,20 +271,34 @@ ${form.story}`;
                   >
                     <MessageCircle className="w-4 h-4" /> WhatsApp
                   </a>
-                  <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-sm hover:text-primary">
-                    <span className="w-4 h-4 inline-flex items-center justify-center">@</span> {CONTACT.email}
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    className="flex items-center gap-3 text-sm hover:text-primary"
+                  >
+                    <span className="w-4 h-4 inline-flex items-center justify-center">
+                      @
+                    </span>{" "}
+                    {CONTACT.email}
                   </a>
                 </div>
               </div>
             </Reveal>
             <Reveal delay={160}>
               <div className="rounded-2xl border border-border p-6 bg-secondary/40">
-                <h3 className="font-display text-lg font-medium">{t("Ringkasan Paket", "Package Recap")}</h3>
+                <h3 className="font-display text-lg font-medium">
+                  {t("Ringkasan Paket", "Package Recap")}
+                </h3>
                 <ul className="mt-4 space-y-3 text-sm">
                   {PRICING.slice(0, 4).map((p) => (
-                    <li key={p.slug} className="flex items-center justify-between">
+                    <li
+                      key={p.slug}
+                      className="flex items-center justify-between"
+                    >
                       <span>{t(p.id.name, p.en.name)}</span>
-                      <span className="text-muted-foreground">Rp {p.price}{t(p.unit, p.unitEn)}</span>
+                      <span className="text-muted-foreground">
+                        Rp {p.price}
+                        {t(p.unit, p.unitEn)}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -197,7 +314,9 @@ ${form.story}`;
 function Field({ label, children }) {
   return (
     <div className="space-y-2">
-      <Label className="text-xs uppercase tracking-widest text-muted-foreground">{label}</Label>
+      <Label className="text-xs uppercase tracking-widest text-muted-foreground">
+        {label}
+      </Label>
       {children}
     </div>
   );

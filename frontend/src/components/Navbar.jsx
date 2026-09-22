@@ -32,17 +32,13 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-10 h-16 md:h-20 flex items-center justify-between gap-6">
-        <Link
-          to="/"
-          className="flex items-center gap-2 group"
-          aria-label="Fraksite Home"
-        >
+        <Link to="/" className="flex items-center" aria-label="Fraksite Home">
           <img
             src={LogoFraksite}
             alt="ini merupakan logo fraksite"
             className="w-12 h-12 rounded-lg"
           />
-          <span className="font-display text-lg md:text-xl font-semibold tracking-tight">
+          <span className="font-display text-[24px] font-semibold tracking-tight">
             Fraksite
           </span>
         </Link>
@@ -100,7 +96,7 @@ export default function Navbar() {
           </button>
           <Link to="/mulai-proyek" className="hidden md:inline-flex">
             <Button className="rounded-full bg-primary hover:bg-primary/90 text-white font-medium px-5 h-10 shadow-glow group">
-              {t("Mulai Proyek", "Start Project")}
+              {t("Konsultasi Gratis", "Free Consultation")}
               <ArrowUpRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Button>
           </Link>
@@ -141,7 +137,7 @@ export default function Navbar() {
               </button>
               <Link to="/mulai-proyek" className="flex-1">
                 <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-white">
-                  {t("Mulai Proyek", "Start Project")}
+                  {t("Konsultasi Gratis", "Free Consultation")}
                 </Button>
               </Link>
             </div>

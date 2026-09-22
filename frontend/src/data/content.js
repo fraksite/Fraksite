@@ -2,19 +2,18 @@
 
 export const CONTACT = {
   whatsapp: "6281234567890", // Ganti dengan nomor WhatsApp Fraksite yang aktif
-  email: "hello@fraksite.com",
+  email: "fraksite@gmail.com",
   instagram: "https://instagram.com/fraksite",
-  location: "Jakarta, Indonesia",
+  location: "Tasikmalaya, Indonesia",
 };
 
 export const NAV = [
   {
     key: "build",
-    href: "/yang-kami-buat",
-    id: "Yang Kami Buat",
-    en: "What We Build",
+    href: "/portofolio",
+    id: "Portofolio",
+    en: "Portofolio",
   },
-  { key: "work", href: "/hasil-kerja", id: "Hasil Kerja", en: "Our Work" },
   { key: "pricing", href: "/harga", id: "Harga", en: "Pricing" },
   { key: "process", href: "/cara-kerja", id: "Cara Kerja", en: "How We Work" },
   { key: "about", href: "/tentang", id: "Tentang Kami", en: "About" },
@@ -680,15 +679,4 @@ export const WHY = [
   },
 ];
 
-export const TECH = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "FastAPI",
-  "MongoDB",
-  "PostgreSQL",
-  "Tailwind",
-  "Figma",
-  "Vercel",
-  "AWS",
-];
+export const TECH = [];

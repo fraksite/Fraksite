@@ -4,49 +4,50 @@
 
 @layer base {
     :root {
-        --background: 0 0% 98%;
-        --foreground: 240 10% 4%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 4%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 4%;
-        --primary: 220 100% 50%;
-        --primary-light: 220 100% 68%;
-        --primary-foreground: 0 0% 100%;
-        --secondary: 240 5% 96%;
-        --secondary-foreground: 240 6% 10%;
-        --muted: 240 5% 96%;
-        --muted-foreground: 240 4% 32%;
-        --accent: 220 100% 50%;
-        --accent-foreground: 0 0% 100%;
-        --destructive: 0 84% 60%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 6% 90%;
-        --input: 240 6% 90%;
-        --ring: 220 100% 50%;
+        --background: #fafafa;
+        --foreground: #09090b;
+        --card: #ffffff;
+        --card-foreground: #09090b;
+        --popover: #ffffff;
+        --popover-foreground: #09090b;
+        --primary: #0055ff;
+        --primary-light: #5c90ff;
+        --primary-foreground: #ffffff;
+        --secondary: #f4f4f5;
+        --secondary-foreground: #18181b;
+        --muted: #f4f4f5;
+        --muted-foreground: #4f4f53;
+        --accent: #0055ff;
+        --accent-foreground: #ffffff;
+        --destructive: #ef4444;
+        --destructive-foreground: #fafafa;
+        --border: #e4e4e7;
+        --input: #e4e4e7;
+        --ring: #0055ff;
         --radius: 0.75rem;
     }
+
     .dark {
-        --background: 0 0% 3%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 6%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 6%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 220 100% 55%;
-        --primary-light: 220 100% 74%;
-        --primary-foreground: 0 0% 100%;
-        --secondary: 240 4% 12%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 4% 10%;
-        --muted-foreground: 240 5% 65%;
-        --accent: 220 100% 55%;
-        --accent-foreground: 0 0% 100%;
-        --destructive: 0 63% 40%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 4% 14%;
-        --input: 240 4% 14%;
-        --ring: 220 100% 55%;
+        --background: #080808;
+        --foreground: #fafafa;
+        --card: #0f0f0f;
+        --card-foreground: #fafafa;
+        --popover: #0f0f0f;
+        --popover-foreground: #fafafa;
+        --primary: #1a66ff;
+        --primary-light: #7aa3ff;
+        --primary-foreground: #ffffff;
+        --secondary: #1d1d20;
+        --secondary-foreground: #fafafa;
+        --muted: #18181b;
+        --muted-foreground: #a1a1aa;
+        --accent: #1a66ff;
+        --accent-foreground: #ffffff;
+        --destructive: #a62626;
+        --destructive-foreground: #fafafa;
+        --border: #222225;
+        --input: #222225;
+        --ring: #1a66ff;
     }
 }
 
@@ -54,15 +55,18 @@
     * {
         @apply border-border;
     }
+
     html {
         scroll-behavior: smooth;
     }
+
     body {
         margin: 0;
         @apply bg-background text-foreground font-sans;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
     h1, h2, h3, h4, h5, h6, .font-display {
         @apply font-sans;
         letter-spacing: -0.02em;
@@ -80,14 +84,27 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: hsl(var(--background)); }
-::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground)); }
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+}
 
 /* Brand gradient used on headline accents */
 .text-gradient-blue {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -95,19 +112,37 @@
 
 /* Glowing marker used on the process timeline */
 .node-glow {
-    box-shadow: 0 0 0 4px hsl(var(--background)), 0 0 24px 2px hsl(var(--primary));
+    box-shadow: 0 0 0 4px var(--background), 0 0 24px 2px var(--primary);
 }
 
 /* Soft ambient shadows for primary CTAs, scaled by size */
-.shadow-glow-sm { box-shadow: 0 8px 30px -8px hsl(var(--primary) / 0.6); }
-.shadow-glow-sm:hover { box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.8); }
-.shadow-glow { box-shadow: 0 16px 40px -12px hsl(var(--primary) / 0.65); }
-.shadow-glow-lg { box-shadow: 0 20px 60px -20px hsl(var(--primary) / 0.65); }
+/* Menggunakan color-mix untuk memberikan efek transparan pada HEX */
+.shadow-glow-sm {
+    box-shadow: 0 8px 30px -8px color-mix(in srgb, var(--primary) 60%, transparent);
+}
+
+.shadow-glow-sm:hover {
+    box-shadow: 0 10px 40px -10px color-mix(in srgb, var(--primary) 80%, transparent);
+}
+
+.shadow-glow {
+    box-shadow: 0 16px 40px -12px color-mix(in srgb, var(--primary) 65%, transparent);
+}
+
+.shadow-glow-lg {
+    box-shadow: 0 20px 60px -20px color-mix(in srgb, var(--primary) 65%, transparent);
+}
 
 @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
+
 .animate-marquee {
     animation: marquee 40s linear infinite;
 }
@@ -118,19 +153,21 @@
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 .reveal.in-view {
     opacity: 1;
     transform: translateY(0);
 }
 
 ::selection {
-    background: hsl(var(--primary));
+    background: var(--primary);
     color: #fff;
 }
 
 .card-hover {
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, background-color 0.3s ease;
 }
+
 .card-hover:hover {
     transform: translateY(-4px);
 }

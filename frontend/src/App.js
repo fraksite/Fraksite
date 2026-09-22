@@ -7,13 +7,15 @@ import { AppProvider, useApp } from "./contexts/AppContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import WhatWeBuild from "./pages/WhatWeBuild";
-import Portfolio from "./pages/Portfolio";
+import Portofolio from "./pages/Portofolio";
 import Pricing from "./pages/Pricing";
 import HowWeWork from "./pages/HowWeWork";
 import About from "./pages/About";
 import FAQPage from "./pages/FAQPage";
 import StartProject from "./pages/StartProject";
+
+// 1. Import komponen Chatbot yang baru dibuat
+import Chatbot from "./components/Chatbot";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -38,9 +40,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/yang-kami-buat" element={<WhatWeBuild />} />
-              <Route path="/hasil-kerja" element={<Portfolio />} />
-              <Route path="/hasil-kerja/:slug" element={<Portfolio />} />
+              <Route path="/portofolio" element={<Portofolio />} />
               <Route path="/harga" element={<Pricing />} />
               <Route path="/cara-kerja" element={<HowWeWork />} />
               <Route path="/tentang" element={<About />} />
@@ -50,6 +50,10 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          
+          {/* 2. Pasang komponen Chatbot di sini agar render di atas Footer dan ada di semua route */}
+          <Chatbot />
+          
           <ThemedToaster />
         </div>
       </BrowserRouter>
