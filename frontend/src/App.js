@@ -14,6 +14,9 @@ import About from "./pages/About";
 import FAQPage from "./pages/FAQPage";
 import StartProject from "./pages/StartProject";
 
+// 1. Import komponen Chatbot yang baru dibuat
+import Chatbot from "./components/Chatbot";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -47,6 +50,10 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          
+          {/* 2. Pasang komponen Chatbot di sini agar render di atas Footer dan ada di semua route */}
+          <Chatbot />
+          
           <ThemedToaster />
         </div>
       </BrowserRouter>
