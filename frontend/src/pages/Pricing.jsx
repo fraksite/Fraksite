@@ -18,7 +18,7 @@ export default function Pricing() {
           description={t("Semua paket termasuk desain custom, development, dan launch ke domain kamu. Butuh yang lebih spesifik? Ambil Custom.", "Every package includes custom design, development, and launch to your domain. Need something specific? Choose Custom.")}
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PRICING.map((p, i) => (
             <Reveal key={p.slug} delay={i * 60}>
               <div
