@@ -4,6 +4,7 @@ import { Menu, X, Sun, Moon, ArrowUpRight } from "lucide-react";
 import { NAV } from "../data/content";
 import { useApp } from "../contexts/AppContext";
 import { Button } from "./ui/button";
+import LogoFraksite from "../assets/images/logoFraksi.png";
 
 export default function Navbar() {
   const { lang, toggleLang, theme, toggleTheme, t } = useApp();
@@ -30,15 +31,17 @@ export default function Navbar() {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-10 h-16 md:h-20 flex items-center justify-between gap-6">
+      <div className="mx-auto max-w-7xl px-4 lg:px-10 h-16 md:h-20 flex items-center justify-between gap-6">
         <Link
           to="/"
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-2 group"
           aria-label="Fraksite Home"
         >
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-primary-light text-white font-display font-semibold text-lg shadow-glow-sm transition-shadow">
-            F
-          </span>
+          <img
+            src={LogoFraksite}
+            alt="ini merupakan logo fraksite"
+            className="w-12 h-12 rounded-lg"
+          />
           <span className="font-display text-lg md:text-xl font-semibold tracking-tight">
             Fraksite
           </span>
@@ -68,16 +71,32 @@ export default function Navbar() {
             aria-label="Toggle language"
             className="hidden sm:inline-flex items-center gap-1 rounded-full border border-border px-3 py-1.5 text-xs font-medium tracking-widest uppercase hover:border-foreground/40 transition-colors"
           >
-            <span className={lang === "id" ? "text-foreground" : "text-muted-foreground"}>ID</span>
+            <span
+              className={
+                lang === "id" ? "text-foreground" : "text-muted-foreground"
+              }
+            >
+              ID
+            </span>
             <span className="text-muted-foreground">/</span>
-            <span className={lang === "en" ? "text-foreground" : "text-muted-foreground"}>EN</span>
+            <span
+              className={
+                lang === "en" ? "text-foreground" : "text-muted-foreground"
+              }
+            >
+              EN
+            </span>
           </button>
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
             className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border hover:border-foreground/40 transition-colors"
           >
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4" />
+            ) : (
+              <Moon className="w-4 h-4" />
+            )}
           </button>
           <Link to="/mulai-proyek" className="hidden md:inline-flex">
             <Button className="rounded-full bg-primary hover:bg-primary/90 text-white font-medium px-5 h-10 shadow-glow group">
@@ -104,7 +123,9 @@ export default function Navbar() {
                 to={n.href}
                 className={({ isActive }) =>
                   `px-3 py-2.5 rounded-lg text-sm font-medium ${
-                    isActive ? "bg-secondary text-foreground" : "text-muted-foreground"
+                    isActive
+                      ? "bg-secondary text-foreground"
+                      : "text-muted-foreground"
                   }`
                 }
               >
