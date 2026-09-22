@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
-<<<<<<< HEAD
 import { ArrowUpRight, ArrowRight, Check } from "lucide-react";
-=======
-import { ArrowUpRight, ArrowRight, Check,} from "lucide-react";
->>>>>>> bd11d8a30bd424d03aac17ce7a01d23158e30904
 import Reveal from "../components/Reveal";
 import SectionHeader from "../components/SectionHeader";
 import { Button } from "../components/ui/button";
 import {
   CATEGORIES,
+  PROJECTS,
   PRICING,
   PROCESS,
   PROBLEMS,
@@ -33,12 +30,12 @@ export default function Home() {
   const comparison =
     mode === "biasa"
       ? {
-          badge: t("❌ Template Biasa", "❌ Standard Template"),
+          badge: "❌ Standard Template",
           badgeClass:
             "border-orange-500/20 bg-orange-500/10 text-orange-300",
           panelClass:
             "border border-slate-200/80 bg-slate-50/80 dark:bg-slate-800/60 dark:border-slate-700/60 rounded-xl p-5 shadow-sm",
-          title: t("Website Biasa", "Standard Website"),
+          title: "Website Biasa",
           itemClass: "text-slate-700 dark:text-slate-200",
           accentClass: "text-orange-500 dark:text-orange-400",
           items: [
@@ -50,8 +47,8 @@ export default function Home() {
                   <path d="M4 20h16" />
                 </svg>
               ),
-              label: t("Kecepatan", "Speed"),
-              value: t("Lambat (4.8s)", "Slow (4.8s)"),
+              label: "Speed",
+              value: "Lambat (4.8s)",
             },
             {
               icon: (
@@ -61,8 +58,8 @@ export default function Home() {
                   <path d="M14 4h7" /><path d="M14 9h7" /><path d="M14 15h7" /><path d="M14 20h7" />
                 </svg>
               ),
-              label: t("Layout", "Layout"),
-              value: t("Kaku & Berantakan di HP", "Rigid & Messy on Mobile"),
+              label: "Layout",
+              value: "Kaku & Berantakan di HP",
             },
             {
               icon: (
@@ -72,18 +69,18 @@ export default function Home() {
                   <circle cx="12" cy="12" r="9" />
                 </svg>
               ),
-              label: t("Hasil", "Result"),
-              value: t("Sepi Pembeli / Konversi Rendah", "Low Interest / Low Conversions"),
+              label: "Hasil",
+              value: "Sepi Pembeli / Konversi Rendah",
             },
           ],
         }
       : {
-          badge: t("⚡ High-Performance Custom", "⚡ Custom High-Performance"),
+          badge: "⚡ Custom High-Performance",
           badgeClass:
             "border-emerald-500/20 bg-emerald-500/10 text-emerald-400",
           panelClass:
             "border border-slate-200/80 bg-slate-50/80 dark:bg-slate-800/60 dark:border-slate-700/60 rounded-xl p-5 shadow-sm",
-          title: t("Versi Fraksite", "Fraksite Version"),
+          title: "Versi Fraksite",
           itemClass: "text-slate-700 dark:text-slate-200",
           accentClass: "text-emerald-600 dark:text-emerald-400",
           items: [
@@ -96,8 +93,8 @@ export default function Home() {
                   <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05" />
                 </svg>
               ),
-              label: t("Kecepatan", "Speed"),
-              value: t("Super Cepat (<0.8s)", "Lightning Fast (<0.8s)"),
+              label: "Speed",
+              value: "Super Cepat (<0.8s)",
             },
             {
               icon: (
@@ -107,8 +104,8 @@ export default function Home() {
                   <path d="M14 4h7" /><path d="M14 9h7" /><path d="M14 15h7" /><path d="M14 20h7" />
                 </svg>
               ),
-              label: t("Layout", "Layout"),
-              value: t("100% Mobile First & Estetik", "100% Mobile First & Polished"),
+              label: "Layout",
+              value: "100% Mobile First & Estetik",
             },
             {
               icon: (
@@ -117,8 +114,8 @@ export default function Home() {
                   <path d="m22 7-8.5 8.5-5-5L2 17" />
                 </svg>
               ),
-              label: t("Hasil", "Result"),
-              value: t("Siap Mengonversi Pengunjung Jadi Pembeli", "Ready to Turn Visitors Into Buyers"),
+              label: "Hasil",
+              value: "Siap Mengonversi Pengunjung Jadi Pembeli",
             },
           ],
         };
@@ -144,12 +141,12 @@ export default function Home() {
                 <h1 className="font-display text-[42px] sm:text-6xl lg:text-[92px] leading-[0.94] font-semibold tracking-tighter mt-6">
                   {t(
                     <>
-                      Website{" "}
-                      <span className="text-gradient-blue">profesional.</span>
+                      website{" "}
+                      <span className="text-gradient-blue">profesional</span>
                     </>,
                     <>
                       <span className="text-gradient-blue">Professional</span>{" "}
-                      website.
+                      website
                     </>,
                   )}
                   <br />
@@ -211,7 +208,7 @@ export default function Home() {
                             : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
                         }`}
                       >
-                        {t("Website Biasa", "Standard Website")}
+                        Website Biasa
                       </button>
 
                       <button
@@ -223,7 +220,7 @@ export default function Home() {
                             : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
                         }`}
                       >
-                        {t("Versi Fraksite", "Fraksite Version")}
+                        Versi Fraksite
                       </button>
                     </div>
 
@@ -267,9 +264,9 @@ export default function Home() {
               <Reveal delay={300}>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-center">
                   {[
-                    { n: "3x", l: t("LEBIH CEPAT", "FASTER") },
-                    { n: "100%", l: t("RESPONSIVE", "RESPONSIVE") },
-                    { n: "High", l: t("CONVERSION", "CONVERSION") },
+                    { n: "3x", l: "LEBIH CEPAT" },
+                    { n: "100%", l: "RESPONSIVE" },
+                    { n: "High", l: "CONVERSION" },
                   ].map((s) => (
                     <div
                       key={s.l}
@@ -403,6 +400,59 @@ export default function Home() {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* HASIL KERJA — Featured */}
+      <section className="py-24 md:py-32 border-t border-border">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <SectionHeader
+              eyebrow={t("Hasil Kerja", "Our Work")}
+              title={t("Bukan pajangan,", "Not a showcase,")}
+              accent={t("tapi hasil nyata.", "but real outcomes.")}
+            />
+
+            <Link
+              to="/hasil-kerja"
+              className="hidden md:inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+            >
+              {t("Semua proyek", "All projects")}
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {PROJECTS.slice(0, 3).map((p, i) => (
+              <Reveal key={p.slug} delay={i * 80}>
+                <Link
+                  to={`/hasil-kerja/${p.slug}`}
+                  className="group block rounded-2xl overflow-hidden border border-border bg-secondary/30 card-hover"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                    <img
+                      src={p.image}
+                      alt={t(p.id.title, p.en.title)}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="p-6">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground uppercase tracking-widest">
+                      <span>{t(p.id.tag, p.en.tag)}</span>
+
+                      <span>{p.year}</span>
+                    </div>
+
+                    <h3 className="mt-3 font-display text-xl font-medium tracking-tight">
+                      {t(p.id.title, p.en.title)}
+                    </h3>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
