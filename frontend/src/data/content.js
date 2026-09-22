@@ -2,9 +2,9 @@
 
 export const CONTACT = {
   whatsapp: "6281234567890", // Ganti dengan nomor WhatsApp Fraksite yang aktif
-  email: "hello@fraksite.com",
+  email: "fraksite@gmail.com",
   instagram: "https://instagram.com/fraksite",
-  location: "Jakarta, Indonesia",
+  location: "Tasikmalaya, Indonesia",
 };
 
 export const NAV = [
