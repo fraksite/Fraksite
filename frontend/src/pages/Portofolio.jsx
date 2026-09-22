@@ -1,4 +1,3 @@
-```javascriptreact
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
 import { ArrowRight, Check } from "lucide-react";
@@ -76,5 +75,3 @@ export default function WhatWeBuild() {
     </div>
   );
 }
-
-```

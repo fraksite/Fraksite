@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Icons from "lucide-react";
-import {
-  ArrowUpRight,
-  ArrowRight,
-  Check,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, ArrowRight, Check, Sparkles } from "lucide-react";
 import Reveal from "../components/Reveal";
 import SectionHeader from "../components/SectionHeader";
 import { Button } from "../components/ui/button";
@@ -36,23 +31,24 @@ export default function Home() {
     mode === "biasa"
       ? {
           badge: "❌ Standard Template",
-          badgeClass:
-            "border-orange-200 bg-orange-100 text-orange-700",
-          panelClass:
-            "border-slate-200 bg-slate-100/90 text-slate-700",
+          badgeClass: "border-orange-200 bg-orange-100 text-orange-700",
+          panelClass: "border-slate-200 bg-slate-100/90 text-slate-700",
           title: "Website Biasa",
           itemClass: "text-slate-600",
           accentClass: "text-orange-500",
           items: [
             { icon: "⏱️", label: "Speed", value: "Lambat (4.8s)" },
             { icon: "📱", label: "Layout", value: "Kaku & Berantakan di HP" },
-            { icon: "📉", label: "Hasil", value: "Sepi Pembeli / Konversi Rendah" },
+            {
+              icon: "📉",
+              label: "Hasil",
+              value: "Sepi Pembeli / Konversi Rendah",
+            },
           ],
         }
       : {
           badge: "⚡ Custom High-Performance",
-          badgeClass:
-            "border-emerald-200 bg-emerald-100 text-emerald-700",
+          badgeClass: "border-emerald-200 bg-emerald-100 text-emerald-700",
           panelClass:
             "border-blue-500/30 bg-white/95 text-slate-800 shadow-[0_20px_50px_rgba(59,130,246,0.18)]",
           title: "Versi Fraksite",
@@ -60,8 +56,16 @@ export default function Home() {
           accentClass: "text-emerald-500",
           items: [
             { icon: "⚡", label: "Speed", value: "Super Cepat (<0.8s)" },
-            { icon: "📱", label: "Layout", value: "100% Mobile First & Estetik" },
-            { icon: "🚀", label: "Hasil", value: "Siap Mengonversi Pengunjung Jadi Pembeli" },
+            {
+              icon: "📱",
+              label: "Layout",
+              value: "100% Mobile First & Estetik",
+            },
+            {
+              icon: "🚀",
+              label: "Hasil",
+              value: "Siap Mengonversi Pengunjung Jadi Pembeli",
+            },
           ],
         };
 
@@ -84,12 +88,18 @@ export default function Home() {
             <div className="lg:col-span-8">
               <Reveal delay={80}>
                 <h1 className="font-display text-[42px] sm:text-6xl lg:text-[92px] leading-[0.94] font-semibold tracking-tighter mt-6">
-                  {t("Website ", " website.")}
-                  <span className="text-gradient-blue">
-                    {t("profesional.", "Professional")}
-                  </span>
-                  <br></br>
-                  {t("Bisnis makin ", "Boost bussiness ")}
+                  {t(
+                    <>
+                      website{" "}
+                      <span className="text-gradient-blue">profesional</span>
+                    </>,
+                    <>
+                      <span className="text-gradient-blue">Professional</span>{" "}
+                      website
+                    </>,
+                  )}
+                  <br />
+                  {t("Bisnis makin ", "Boost business ")}
                   <span className="text-gradient-blue">
                     {t("kredibel.", "credibility.")}
                   </span>
@@ -182,7 +192,9 @@ export default function Home() {
                               key={item.label}
                               className={`flex items-start gap-2 rounded-xl border border-current/10 bg-white/20 px-2.5 py-2 text-xs transition-all duration-300 ease-in-out ${comparison.itemClass}`}
                             >
-                              <span className={comparison.accentClass}>{item.icon}</span>
+                              <span className={comparison.accentClass}>
+                                {item.icon}
+                              </span>
                               <div className="leading-snug">
                                 <div className="font-medium">
                                   {item.label}: {item.value}
