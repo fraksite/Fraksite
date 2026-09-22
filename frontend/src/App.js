@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import WhatWeBuild from "./pages/WhatWeBuild";
-import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import HowWeWork from "./pages/HowWeWork";
 import About from "./pages/About";
@@ -39,8 +38,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/yang-kami-buat" element={<WhatWeBuild />} />
-              <Route path="/hasil-kerja" element={<Portfolio />} />
-              <Route path="/hasil-kerja/:slug" element={<Portfolio />} />
               <Route path="/harga" element={<Pricing />} />
               <Route path="/cara-kerja" element={<HowWeWork />} />
               <Route path="/tentang" element={<About />} />

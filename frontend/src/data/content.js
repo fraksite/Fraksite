@@ -14,7 +14,6 @@ export const NAV = [
     id: "Yang Kami Buat",
     en: "What We Build",
   },
-  { key: "work", href: "/hasil-kerja", id: "Hasil Kerja", en: "Our Work" },
   { key: "pricing", href: "/harga", id: "Harga", en: "Pricing" },
   { key: "process", href: "/cara-kerja", id: "Cara Kerja", en: "How We Work" },
   { key: "about", href: "/tentang", id: "Tentang Kami", en: "About" },
