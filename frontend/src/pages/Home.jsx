@@ -7,6 +7,7 @@ import SectionHeader from "../components/SectionHeader";
 import { Button } from "../components/ui/button";
 import {
   CATEGORIES,
+  PROJECTS,
   PRICING,
   PROCESS,
   PROBLEMS,
