@@ -146,25 +146,27 @@ function HeroVisual() {
         {t("Website Siap", "Website Ready")}
       </div>
 
-      {/* CODE CARD: only touches the window's bottom edge */}
-      <div
-        className="absolute border border-border bg-card shadow-[0_12px_28px_-14px_rgba(15,23,42,0.4)]"
-        style={{ right: "2.5%", bottom: "3%", width: "27%", padding: "1.6cqw", borderRadius: "1.8cqw" }}
-      >
-        <div className="flex" style={{ gap: "0.6cqw", marginBottom: "1.1cqw" }}>
-          <span className="rounded-full bg-primary" style={{ width: "0.9cqw", height: "0.9cqw" }} />
-          <span className="rounded-full bg-foreground/15" style={{ width: "0.9cqw", height: "0.9cqw" }} />
-          <span className="rounded-full bg-foreground/15" style={{ width: "0.9cqw", height: "0.9cqw" }} />
-        </div>
-        <pre className="font-mono text-muted-foreground" style={{ fontSize: "1.35cqw", lineHeight: 1.6 }}>
-          <span className="text-primary">{"<Hero"}</span>
-          {"\n  "}
-          <span className="text-muted-foreground">{t("nama=", "name=")}</span>
-          <span className="text-foreground">{t('"Toko Kamu"', '"Your Shop"')}</span>
-          {"\n"}
-          <span className="text-primary">{"/>"}</span>
-        </pre>
-      </div>
+      {/* EXAMPLE NOTE CARD: only touches the window's bottom edge */}
+<div
+  className="absolute border border-border bg-card shadow-[0_12px_28px_-14px_rgba(15,23,42,0.4)]"
+  style={{ right: "2.5%", bottom: "3%", width: "34%", padding: "1.6cqw 1.8cqw", borderRadius: "1.8cqw" }}
+>
+  <p
+    className="font-semibold uppercase text-primary"
+    style={{ fontSize: "1.2cqw", letterSpacing: "0.16em", lineHeight: 1.2 }}
+  >
+    {t("Contoh Website", "Website Example")}
+  </p>
+  <p
+    className="text-foreground/80"
+    style={{ fontSize: "1.6cqw", lineHeight: 1.4, marginTop: "0.8cqw" }}
+  >
+    {t(
+      "Ini hanya contoh. Websitemu bisa punya tampilan tersendiri.",
+      "This is just an example. Your website can have its own style."
+    )}
+  </p>
+</div>
     </div>
   );
 }
